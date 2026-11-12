@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import {
   Github,
   ExternalLink,
@@ -360,12 +361,14 @@ export function ProjectsClient({
             >
               {project.image && (
                 <div className="relative h-48 w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 right-3">
+                  <div className="absolute top-3 right-3 z-10">
                     <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-950/80 backdrop-blur-md text-white border border-white/20 flex items-center gap-1">
                       <Sparkles className="w-3 h-3 text-amber-400" /> Destaque
                     </span>
