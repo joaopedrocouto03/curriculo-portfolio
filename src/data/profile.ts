@@ -27,11 +27,11 @@ export const profile: ProfileData = {
   phone: "+55 (11) 98765-4321",
 
   // TODO: substituir pelo seu nome de usuário exato no GitHub (usado na API do GitHub)
-  githubUsername: "octocat",
+  githubUsername: "joaopedrocouto03",
 
   socials: {
     // TODO: substituir pela URL do seu perfil no GitHub
-    github: "https://github.com/octocat",
+    github: "https://github.com/joaopedrocouto03",
 
     // TODO: substituir pela URL do seu perfil no LinkedIn
     linkedin: "https://www.linkedin.com/in/exemplo-perfil",
