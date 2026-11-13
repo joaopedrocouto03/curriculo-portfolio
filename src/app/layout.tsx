@@ -19,6 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://curriculo-portfolio.vercel.app"),
   title: {
     default: `${profile.name} | Portfólio & Currículo`,
     template: `%s | ${profile.name}`,

@@ -5,6 +5,16 @@ import { ArrowRight, GraduationCap, Briefcase, FolderGit2, CheckCircle2 } from "
 import { profile } from "@/data/profile";
 
 export function HomeSummarySection() {
+  const academicSummary =
+    profile.certifications.length > 0
+      ? `${profile.academic.length} formação e ${profile.certifications.length} certificações`
+      : `${profile.academic.length} formação acadêmica em andamento`;
+
+  const professionalSummary =
+    profile.professional.length > 0
+      ? `${profile.professional.length} experiências registradas`
+      : "Disponível para estágio & projetos";
+
   return (
     <section className="py-16 border-t border-slate-200/60 dark:border-slate-800/60 bg-slate-50/50 dark:bg-slate-900/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,7 +23,7 @@ export function HomeSummarySection() {
             Navegue pelas Seções do Portfólio
           </h2>
           <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
-            Estrutura completa desenvolvida para avaliação acadêmica com separação clara de competências, formação e projetos práticos.
+            Estrutura desenvolvida para apresentação acadêmica e profissional com separação clara de competências, formação e projetos práticos.
           </p>
         </div>
 
@@ -27,11 +37,11 @@ export function HomeSummarySection() {
               Formação Acadêmica
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
-              {profile.academic[0]?.course} na {profile.academic[0]?.institution}, com certificações e cursos complementares.
+              {profile.academic[0]?.course} na {profile.academic[0]?.institution}.
             </p>
             <div className="text-xs text-indigo-600 dark:text-indigo-400 font-semibold mb-6 flex items-center gap-1">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>{profile.academic.length} formações e {profile.certifications.length} certificações</span>
+              <span>{academicSummary}</span>
             </div>
             <Link
               href="/academico"
@@ -51,11 +61,13 @@ export function HomeSummarySection() {
               Experiência Profissional
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
-              Atuação como {profile.professional[0]?.role} na {profile.professional[0]?.company}, com entregas práticas.
+              {profile.professional.length > 0
+                ? `${profile.professional[0]?.role} na ${profile.professional[0]?.company}.`
+                : "Aberto a oportunidades de estágio e desenvolvimento de sistemas web."}
             </p>
             <div className="text-xs text-purple-600 dark:text-purple-400 font-semibold mb-6 flex items-center gap-1">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>{profile.professional.length} experiências registradas</span>
+              <span>{professionalSummary}</span>
             </div>
             <Link
               href="/profissional"
@@ -75,7 +87,7 @@ export function HomeSummarySection() {
               Projetos & GitHub API
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
-              Catálogo de repositórios reais consumidos ao vivo pela API do GitHub, com filtros por tecnologia e links de deploy.
+              Repositórios reais sincronizados via API do GitHub, projetos em destaque com filtros por tecnologia e links de código.
             </p>
             <div className="text-xs text-cyan-600 dark:text-cyan-400 font-semibold mb-6 flex items-center gap-1">
               <CheckCircle2 className="w-3.5 h-3.5" />
